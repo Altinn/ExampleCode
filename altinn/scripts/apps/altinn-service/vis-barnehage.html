@@ -1,0 +1,33 @@
+<ul class="list-unstyled">
+  <li ng-repeat="barnehage in barnehager">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h3 class="panel-title">{{barnehage.navn}}</h3>
+      </div>
+      <div class="panel-body">
+        <p>
+          <strong>Om barnehagen:</strong><br/>
+        {{barnehage.omBarnehagen}}
+        </p>
+        <p>
+          <strong>Adresse:</strong><br/>
+          {{barnehage.adresse}}<br/>
+          {{barnehage.postnr}} {{barnehage.poststed}}<br/>
+        </p>
+        <p>
+          <strong>Nettside:</strong><br/>
+          <a href="{{barnehage.webside}}">{{barnehage.webside}}</a>
+        </p>
+      </div>
+    </div>
+  </li>
+</ul>
+
+<div ng-controller="CollapseDemoCtrl">
+  <button class="btn btn-default"  ng-click="isCollapsed = !isCollapsed">Toggle collapse</button>
+  <hr>
+  <div collapse="isCollapsed">
+    <div class="well well-lg">Some content : {{isCollapsed}}</div> 
+  </div>
+</div>
+

@@ -1,0 +1,60 @@
+
+
+<div class="jumbotron">
+        
+    <form name="myForm">
+          <p>Hvilken type barnehage ønsker du å søke i ? </p>
+          
+          <div class="radio">
+            <label>
+              <input type="radio" ng-model="typeBarnehage" value="kommunal">
+              Kommunal &nbsp;
+            </label>
+          
+
+          
+            <label>
+              <input type="radio" ng-model="typeBarnehage" value="privat">
+              Privat
+            </label>
+          </div>
+
+          <div ng-if="typeBarnehage">
+            <p> Barnehager i Lyng ({{typeBarnehage}})</p>
+
+            <ul ng-if="typeBarnehage" class="list-unstyled">
+              <li ng-repeat="barnehage in barnehageListe" ng-class="erBarnehageValgt(barnehage) ? 'active' : ''">
+                <div ng-class="erBarnehageValgt(barnehage) ? 'panel-primary' : 'panel-default'" class="panel ">
+                  <div class="panel-heading">
+                    <h3 class="panel-title">{{barnehage.navn}}</h3>
+                  </div>
+                  <div class="panel-body">
+                    {{barnehage.adresse}}                    
+
+
+                    <span ng-if="erBarnehageValgt(barnehage)" class="pull-right">
+                      <button ng-click="settForstePri(barnehage)" ng-class="getForstePri() === barnehage ? 'btn-success' : ''" class="btn">1. prioritet</button>
+
+                      <button ng-click="fjernBarnehage(barnehage)" class="btn">Fjern</button>
+                    </span>
+
+
+
+                    <button ng-if="!erBarnehageValgt(barnehage)" ng-click="velgBarnehage(barnehage)" class="btn pull-right">Velg barnehage</button>
+                  </div>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </form>
+
+  
+
+    </div>
+    <div><a href="#/personalia" role="button" class="btn btn-primary pull-right">Neste</a>
+    </div>
+
+</div>
+
+
+

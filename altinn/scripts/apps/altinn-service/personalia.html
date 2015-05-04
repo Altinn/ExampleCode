@@ -1,0 +1,61 @@
+<div class="jumbotron">
+ 
+ <b>Opplysninger om søker:</b><br><br>
+  <b>Navn</b>
+    <div>{{me.Name}}</div><br>
+  <b>Adresse</b>
+    <div ng-show="me.AddressLine1">{{me.AddressLine1}}</div>
+    <div ng-show="me.AddressLine2">{{me.AddressLine2}}</div>
+    <div ng-show="me.AddressLine3">{{me.AddressLine3}}</div>
+    <br>
+    <b>Kontaktinformasjon</b><br>
+    <span class="glyphicon glyphicon-envelope"></span> <a href="mailto:{{me.ContactInformation.Email}}">{{me.ContactInformation.Email}}</a><br>
+    <span class="glyphicon glyphicon-phone"></span> Tlf: {{me.ContactInformation.Mobile}}<br>
+    
+  <br>
+
+ <b>Hvem søker du barnehageplass for?:</b><br><br>
+
+<!-- <div class="input-group" ng-model="barnValgt">
+  <input type="text" class="form-control">
+  {{barnListe.navn}}
+  <span class="input-group-addon"><span class="glyphicon glyphicon-plus"> Velg</span></span>
+</div>
+
+<div class="input-group">
+  <span class="input-group-addon">@</span>
+  <input type="text" class="form-control" placeholder="Username">
+</div> -->
+
+  <div ng-controller="BarnController">
+        <form name="myForm">
+            <ul class="list-unstyled">
+              <li ng-repeat="barn in barneListe" ng-class="erBarnValgt(barn) ? 'active' : ''">
+                <div ng-class="erBarnValgt(barn) ? 'panel-primary' : 'panel-default'"class="panel">
+                 
+                  
+                  <div class="panel-body">
+                    {{barn.navn}} - {{barn.fnummer}}
+
+                    <span ng-if="erBarnValgt(barn)" class="pull-right">
+                        <button ng-click="fjernBarn(barn)" class="btn">Fjern</button>
+                    </span>
+
+                    <button ng-if="!erBarnValgt(barn)" ng-click="velgBarn(barn)" class="btn pull-right">Velg barn</button>
+                  </div>
+                </div>
+              </li>
+            </ul>
+          
+        </form>
+
+      </div>
+
+ 
+ </div>
+  <div>
+    <a href="#/" role="button" class="btn btn-primary pull-left">Forrige</a>
+    <a href="#/annet" role="button" class="btn btn-primary pull-right">Neste</a>
+    
+  </div>
+

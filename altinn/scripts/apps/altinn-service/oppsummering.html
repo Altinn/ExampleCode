@@ -1,0 +1,56 @@
+<div class="jumbotron">
+
+<div class="container">
+
+  <div ng-controller='Personalia'>
+
+  <b>Opplysninger om søker:</b><br><br>
+    <b>Navn</b>
+      <div>{{me.Name}}</div><br>
+    <b>Adresse</b>
+      <div ng-show="me.AddressLine1">{{me.AddressLine1}}</div>
+      <div ng-show="me.AddressLine2">{{me.AddressLine2}}</div>
+      <div ng-show="me.AddressLine3">{{me.AddressLine3}}</div>
+      <br>
+      <b>Kontaktinformasjon</b><br>
+      <span class="glyphicon glyphicon-envelope"></span> <a href="mailto:{{me.ContactInformation.Email}}">{{me.ContactInformation.Email}}</a><br>
+      <span class="glyphicon glyphicon-phone"></span> Tlf: {{me.ContactInformation.Mobile}}<br>
+      
+    <br>
+
+  </div>
+
+  <div ng-controller="BarnehageController">
+  <b>Søker barnehageplass i:</b><br>
+
+      <ul class="list-group">
+        <li ng-repeat="barnehage in valgteBarnehager" class="list-group-item">{{barnehage.navn}} ({{barnehage.type}})</li>
+      </ul>
+
+  </div>
+
+  <div ng-controller='BarnController'>
+
+      <b>For:</b><br>
+
+      <ul class="list-group">
+        <li ng-repeat="barn in valgteBarn" class="list-group-item">{{barn.navn}} - {{barn.fnummer}} </li>
+      </ul>
+
+  </div>
+
+  <div ng-controller="AnnenInfo">
+
+    <b>Annen Informasjon:</b><br>
+    <textarea readonly rows="5" class="form-control">{{getAnnenInfo()}}</textarea>
+
+  </div>
+
+
+
+</div>
+</div>
+<div>
+    <a href="#/Annet" role="button" class="btn btn-primary pull-left">Forrige</a>
+    <a href="#/kvittering" ng-click="sendSkjema()" class="btn btn-primary pull-right" role="button">Send inn søknad</a>
+</div>

@@ -1,0 +1,32 @@
+.page-indicator {
+	margin-bottom: 20px;
+
+	&:before {
+		content: "";
+		@extend .icons-info;
+		height: icons-sprite-height(info);
+		width:  icons-sprite-width(info);
+		float: left;
+		margin-right: 5px;
+	}
+}
+
+.nav, .pagination, .carousel, .panel-title a { cursor: pointer; }
+
+.icon-star:before {
+	content: "";
+	@extend .icons-star;
+	height: icons-sprite-height(star);
+	width:  icons-sprite-width(star);
+	float: left;
+	margin-right: 5px;
+}
+
+.color-heading {
+	background-color: #00ADBD;
+	color: #FFFFFF;
+}
+.color-heading2 {
+	background-color: #5E5E5E;
+	color: #FFFFFF;
+}

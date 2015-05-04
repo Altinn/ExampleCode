@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		
+		<meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Søknad om barnehage</title>
+		<link rel="stylesheet" href="styles/packed/main.css" />
+	</head>
+	<body ng-app="AltinnService">
+
+		<div class="container">
+			<div class="panel panel-default">
+			  <div class="color-heading">
+			      <div class="panel-body">NO <small>{{ personName }}</small></div>
+			  </div> 
+			  <div class="panel-footer"><h1>Lyng kommune</br></h1><small>SØKNAD OM BARNEHAGEPLASS</small></div>
+			</div>
+		</div>
+
+		<div class="container">
+	<nav class="navbar navbar-default" role="navigation">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+
+        <button type="button" class="navbar-toggle" ng-init="navCollapsed = true" ng-click="navCollapsed = !navCollapsed">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="#">Velg Barnehage</a>
+      </div>
+    
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="collapse navbar-collapse" ng-class="!navCollapsed && 'in'" ng-controller="HeaderController">
+      
+        <ul class="nav navbar-nav">
+           <li ng-class="{ active: isActive('/personalia')}"><a href="#/personalia">Personalia</a></li>
+	      <li ng-class="{ active: isActive('/annet')}"><a href="#/annet">Annet</a></li>
+    	  <li ng-class="{ active: isActive('/oppsummering')}"><a href="#/oppsummering">Oppsummering</a></li>
+    	  <li ng-class="{ active: isActive('/kvittering')}"><a href="#/kvittering">Kvittering</a></li>
+        </ul>
+        </div><!-- /.navbar-collapse -->
+    	</nav>
+	</div>
+
+		<div class="container">
+			
+			<div ng-view></div>
+		</div>
+
+		<br>
+		<div class="container">
+			<div class="panel panel-default text-center">
+				- Lyng kommune -<br>
+Brukerstøtte: 90 90 90 90</div>
+			<div>
+		<script type="text/javascript" src="scripts/packed/altinn.packed.js"></script>
+	</body>
+
+</html>
