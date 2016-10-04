@@ -4,10 +4,11 @@ AgencySystem/Outbound/Java/Example1/external-attachment-receiver/external-attach
 AgencySystem/Outbound/Java/Example1/external-attachment-receiver/external-attachment-receiver-source/.idea/
 
 #.Net bin, obj folders
-AgencySystem/Outbound/DotNet/Example1/AltinnSimulatorSample/AltinnBatchReceiverService/bin
-AgencySystem/Outbound/DotNet/Example1/AltinnSimulatorSample/AltinnBatchReceiverService/obj
-AgencySystem/Outbound/DotNet/Example1/AltinnSimulatorSample/AltinnSim/bin
-AgencySystem/Outbound/DotNet/Example1/AltinnSimulatorSample/AltinnSim/obj
+AgencySystem/Outbound/DotNet/Example1/AltinnBatchReceiverService/AltinnBatchReceiverService/bin
+AgencySystem/Outbound/DotNet/Example1/AltinnBatchReceiverService/AltinnBatchReceiverService/obj
+AgencySystem/Outbound/DotNet/Example1/AltinnSimulator/bin
+AgencySystem/Outbound/DotNet/Example1/AltinnSimulator/obj
+
 
 # Mobile Tools for Java (J2ME)
 .mtj.tmp/
